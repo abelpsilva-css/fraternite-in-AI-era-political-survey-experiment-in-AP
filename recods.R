@@ -18,7 +18,7 @@ datacp <- datacp %>%
 class(datacp$A_idioma_)
 str(datacp$A_idioma_)
 
-#RECODS
+#RECODS (Catalan and Spanish responses treated all as Spanish)
 datacp <- datacp %>%
   mutate(
     simp = case_when(A_idioma_ == 1 ~ A_simp_, A_idioma_ == 2 ~ A_simp_.0, TRUE ~ NA_real_),
@@ -55,7 +55,7 @@ datacp <- datacp %>%
       antisimp == 10 ~ "Ninguno", antisimp == 11 ~ NA_character_
     )
   )
-
+#ACCORDING TO CEO (2025) CATALAN PARTIES ARE CLASSIFIED AS IT FOLLOWS)
 datacp <- datacp %>%
   mutate(
     ideo_endo = case_when(
